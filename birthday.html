@@ -1,0 +1,125 @@
+// =============================
+// Happy Birthday Manu ❤️
+// script.js
+// =============================
+
+// Floating Hearts
+function createHeart(){
+
+const heart=document.createElement("span");
+
+heart.innerHTML="💖";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.position="fixed";
+
+heart.style.bottom="-40px";
+
+heart.style.fontSize=(20+Math.random()*20)+"px";
+
+heart.style.animation=`float ${5+Math.random()*5}s linear`;
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},10000);
+
+}
+
+setInterval(createHeart,350);
+
+
+// Confetti
+
+function launchConfetti(){
+
+for(let i=0;i<150;i++){
+
+let c=document.createElement("div");
+
+c.className="confetti";
+
+c.style.left=Math.random()*100+"vw";
+
+c.style.background=
+["#ff4d88","#ffd700","#00d4ff","#ffffff","#ff99cc"][Math.floor(Math.random()*5)];
+
+c.style.animationDuration=(3+Math.random()*3)+"s";
+
+document.body.appendChild(c);
+
+setTimeout(()=>{
+c.remove();
+},6000);
+
+}
+
+}
+
+
+// Typewriter Effect
+
+function typeWriter(id,text,speed){
+
+let i=0;
+
+const el=document.getElementById(id);
+
+el.innerHTML="";
+
+function typing(){
+
+if(i<text.length){
+
+el.innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(typing,speed);
+
+}
+
+}
+
+typing();
+
+}
+
+
+// Envelope
+
+function openLetter(){
+
+document.getElementById("envelope").classList.add("open");
+
+}
+
+
+// Music
+
+function playMusic(){
+
+let music=document.getElementById("music");
+
+music.play();
+
+}
+
+
+// Fade Animation
+
+window.onload=()=>{
+
+document.body.style.opacity="0";
+
+setTimeout(()=>{
+
+document.body.style.transition="1s";
+
+document.body.style.opacity="1";
+
+},100);
+
+}
